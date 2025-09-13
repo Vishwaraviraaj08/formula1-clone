@@ -1,0 +1,49 @@
+.sponsors-grid {
+    display: grid;
+    /* This responsive grid automatically fits items */
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1.5rem; /* A slightly smaller gap */
+    padding: 2rem 0;
+    border-top: 1px solid #383838;
+    border-bottom: 1px solid #383838;
+}
+
+.sponsor-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    padding: 1rem;
+    /* THE FIX FOR VISIBILITY:
+      A white background ensures all logos, light or dark, are visible.
+    */
+    background-color: transparent;
+    border-radius: 12px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sponsor-logo {
+    /* THE FIX FOR SIZING:
+      This allows logos to scale naturally based on their width.
+    */
+    max-width: 90%;  /* Use most of the container's width */
+    height: auto;     /* Height will adjust automatically to maintain aspect ratio */
+    max-height: 60px; /* A fallback to prevent extremely tall logos from breaking the layout */
+    object-fit: contain;
+
+    /* A more compatible filter effect */
+    filter: grayscale(100%);
+    opacity: 0.6;
+    transition: all 0.3s ease-in-out;
+}
+
+.sponsor-item:hover {
+    cursor: pointer;
+    transform: scale(1.05); /* Scale the whole container */
+    box-shadow: 0px 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+.sponsor-item:hover .sponsor-logo {
+    filter: grayscale(0%); /* Restore color on hover */
+    opacity: 1;
+}

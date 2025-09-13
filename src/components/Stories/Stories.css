@@ -1,0 +1,81 @@
+/* Main container to align controls and viewport */
+.stories-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* Viewport that clips the track */
+.stories-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Track that holds all the cards in a single row */
+.stories-track {
+    display: flex;
+    /* Smooth transition for the slide effect */
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Wrapper for each card to control its size */
+.story-card-wrapper {
+    flex: 0 0 20%; /* Each card takes up 20% of the viewport (100% / 5 cards) */
+    box-sizing: border-box;
+    padding: 0 0.5rem; /* Creates a gap between cards */
+}
+
+.story-card {
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+}
+
+.story-card:hover {
+    cursor: pointer;
+}
+
+.story-card-image {
+    aspect-ratio: 3 / 5;
+    object-fit: cover;
+    width: 100%;
+    transition: transform 0.3s ease-in-out;
+}
+
+.story-card:hover .story-card-image {
+    transform: scale(1.05);
+}
+
+.story-card .card-img-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 40%);
+    border-radius: 8px;
+}
+
+.story-card-title {
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+}
+
+/* Styling for the external controls */
+.stories-control {
+    background-color: #212529;
+    border: 1px solid #444;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.stories-control.prev {
+    margin-right: 1rem;
+}
+
+.stories-control.next {
+    margin-left: 1rem;
+}

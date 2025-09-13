@@ -1,0 +1,206 @@
+/* --- Podium Section --- */
+
+.podium-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    min-height: 350px;
+    background-color: var(--team-color, #333); /* Use team color as base, fallback to #333 */
+    transform: scale(1); /* Initial scale for transition */
+    transition: transform 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+/* Hover effect for the card */
+.podium-card:hover {
+    transform: scale(1.03); /* Increase scale on hover */
+    cursor: pointer;
+}
+
+/* Make P1 taller */
+.podium-col.p1 .podium-card {
+    min-height: 400px;
+    border: 2px solid #FFD700; /* Gold border for P1 */
+}
+
+/* NEW: Styling for the fading stripes */
+.podium-stripes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+            repeating-linear-gradient(
+                    45deg, /* Angle of the stripes */
+                    var(--team-color, #333) 0%, /* Start with team color */
+                    var(--team-color, #333) 10%, /* Team color solid part */
+                    rgba(var(--team-color-rgb, 51, 51, 51), 0.5) 15%, /* Faded team color part */
+                    rgba(var(--team-color-rgb, 51, 51, 51), 0) 20% /* Transparent part */
+            );
+    background-size: 200% 200%; /* Make the gradient larger to control fading */
+    opacity: 0.8; /* Adjust opacity as needed */
+    z-index: 1; /* Ensure it's below the driver image but above the card background */
+}
+
+
+.podium-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    z-index: 2; /* Ensure driver image is above stripes */
+}
+
+.podium-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0) 100%);
+    z-index: 3; /* Ensure overlay is on top of everything */
+}
+
+.podium-position {
+    font-family: "F1 Bold";
+    font-size: 3rem;
+    margin-right: 1rem;
+    line-height: 1;
+}
+
+.podium-driver-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.podium-driver-info .driver-name {
+    font-size: 1.2rem;
+}
+
+.podium-driver-info .driver-team {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* ... (rest of the table styling) ... */
+
+
+.podium-row {
+    align-items: flex-end; /* Align cards to the bottom */
+}
+
+.podium-card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    min-height: 350px;
+    background-color: #333; /* Fallback color */
+}
+
+/* Make P1 taller */
+.podium-col.p1 .podium-card {
+    min-height: 400px;
+    border: 2px solid #FFD700; /* Gold border for P1 */
+}
+
+.podium-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom center;
+}
+
+.podium-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0) 100%);
+}
+
+.podium-position {
+    font-family: "F1 Bold";
+    font-size: 3rem;
+    margin-right: 1rem;
+    line-height: 1;
+}
+
+.podium-driver-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.podium-driver-info .driver-name {
+    font-size: 1.2rem;
+}
+
+.podium-driver-info .driver-team {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+/* --- Table Section --- */
+.standings-table {
+    border-collapse: collapse; /* Important for border control */
+    font-size: 1.1rem;
+}
+
+/* Remove all default borders from table cells */
+.standings-table th,
+.standings-table td {
+    border: none !important;
+    vertical-align: middle;
+    padding: 1rem 0.75rem;
+}
+
+/* Add ONLY the bottom border to create row separators */
+.standings-table tr {
+    border-bottom: 1px solid #383838;
+}
+
+/* Remove bottom border from the last row */
+.standings-table tr:last-child {
+    border-bottom: none;
+}
+
+.position-cell {
+    font-family: "F1 Bold";
+    font-size: 1.5rem;
+    color: #999;
+    width: 60px;
+}
+
+.driver-cell {
+    font-weight: 700;
+}
+
+.team-color-bar {
+    display: inline-block;
+    width: 4px;
+    height: 25px;
+    margin-right: 15px;
+    vertical-align: middle;
+    border-radius: 2px;
+}
+
+.points-cell {
+    text-align: right;
+    font-family: "F1 Bold";
+    font-size: 1.2rem;
+    width: 120px;
+}

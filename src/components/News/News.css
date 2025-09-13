@@ -1,0 +1,194 @@
+.news-card {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s ease-in-out;
+}
+
+.news-card:hover {
+    /*transform: scale(1.03);*/
+    cursor: pointer;
+}
+
+.news-card-img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+/* Dark gradient overlay */
+.card-img-overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 20%, rgba(0, 0, 0, 0) 60%);
+}
+
+.news-card-category {
+    color: #e10600; /* F1 Red */
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.news-card-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.video-scroll-container {
+    display: flex;
+    overflow-x: auto;
+    gap: 1.2rem;
+    padding-bottom: 1rem; /* Space for scrollbar */
+}
+
+/* Hide scrollbar for a cleaner look, but still allow scrolling */
+.video-scroll-container::-webkit-scrollbar {
+    display: none;
+}
+.video-scroll-container {
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+
+.video-card {
+    flex: 0 0 300px; /* Prevents card from shrinking, sets a fixed width */
+    border: 1px solid #333;
+    transition: transform 0.2s ease-in-out;
+}
+
+.video-card:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.video-thumbnail-wrapper {
+    position: relative;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.video-card:hover .play-icon {
+    opacity: 1;
+}
+
+.video-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* ADD THIS RULE */
+.news-card:hover .news-card-img {
+    transform: scale(1.15); /* Applied only to the image */
+    transition: transform 0.5s ease;
+/*    hover leaving transition*/
+    filter: brightness(0.8);
+}
+
+/* --- Marquee Carousel Styles --- */
+
+.marquee-container {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    /* Optional: add a fade effect on the edges */
+    -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+    mask-image: linear-gradient(to right, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 10%, rgba(0,0,0,1) 90%, rgba(0,0,0,0) 100%);
+}
+
+.marquee-track {
+    display: flex;
+    /* The width is 2x the number of original videos */
+    width: calc(320px * 10); /* (Card Width + Gap) * (Number of Videos * 2) */
+    animation: marquee-scroll 40s linear infinite;
+}
+
+.marquee-container:hover .marquee-track {
+    animation-play-state: paused; /* Pause the animation on hover */
+}
+
+@keyframes marquee-scroll {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%); /* Move by the width of the original set of videos */
+    }
+}
+
+/* --- Video Card Styles --- */
+
+.video-card-wrapper {
+    flex-shrink: 0;
+    width: 300px;
+    margin-right: 20px;
+}
+
+.video-card {
+    border: 1px solid #333;
+    transition: transform 0.2s ease-in-out;
+}
+
+.video-card:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+}
+
+.video-thumbnail-wrapper {
+    position: relative;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.8);
+    opacity: 0.8;
+    transition: opacity 0.2s;
+}
+
+.video-card:hover .play-icon {
+    opacity: 1;
+}
+
+.video-card-title {
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+
+/* --- Modal & Video Embed Styles --- */
+
+.modal-content {
+    background-color: #15151e; /* Match your site's dark background */
+    border: 1px solid #555;
+}
+
+/* Responsive 16:9 aspect ratio container for the iframe */
+.video-embed-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+}
+
+.video-embed-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

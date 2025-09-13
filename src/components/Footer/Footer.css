@@ -1,0 +1,111 @@
+/* Main Footer Container */
+.site-footer-v2 {
+    background-color: #15151e;
+    color: #ffffff;
+    padding: 2rem 0 1rem 0;
+    font-family: "F1 Regular", sans-serif; /* Use F1 Regular as base */
+}
+
+/* App Download Section */
+.app-download-title {
+    font-family: "F1 Bold", sans-serif;
+    font-size: 2rem;
+    letter-spacing: 1px;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .app-download-title {
+        text-align: left;
+        margin-bottom: 0;
+    }
+}
+
+.app-badges img {
+    height: 40px;
+}
+
+/* Main Navigation Section */
+.footer-main-nav {
+    padding-bottom: 1rem;
+    flex-wrap: wrap; /* Allow nav items to wrap on small screens */
+}
+
+.footer-main-nav .nav-link {
+    color: #ffffff;
+    font-family: "F1 Bold", sans-serif;
+    text-transform: uppercase;
+    padding: 0.5rem 1rem 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-main-nav .nav-link:hover {
+    color: #e10600; /* F1 Red */
+}
+
+/* Custom Dropdown Button Styling */
+.footer-dropdown-toggle {
+    border: 1px solid #ffffff !important;
+    border-radius: 8px !important;
+    padding: 0.3rem 1rem !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5;
+}
+.footer-dropdown-toggle::after {
+    /* Style the dropdown arrow */
+    margin-left: 0.8em;
+}
+
+
+/* Red Divider Section */
+.footer-divider-container {
+    display: flex;
+    align-items: center;
+    margin: 1rem 0;
+}
+
+.divider-logo {
+    height: 18px; /* Slightly increased size for the double line */
+    margin-right: -1px;
+    z-index: 1;
+
+    /* THE FIX FOR RED LOGO:
+       This filter combination targets white/black SVGs and colorizes them red.
+    */
+    filter: brightness(0) saturate(100%) invert(14%) sepia(89%) saturate(5424%) hue-rotate(352deg) brightness(91%) contrast(129%);
+}
+
+.divider-bar {
+    /* THE FIX FOR DOUBLE LINE:
+       We remove the background and height, and instead use top and bottom borders.
+    */
+    width: 100%;
+    margin-left: 20px;
+    height: 12px; /* This value now controls the space between the lines */
+    border-top: 4px solid #e10600;
+    border-bottom: 4px solid #e10600;
+}
+
+
+
+/* Bottom Section */
+.social-links-bottom a {
+    color: #ffffff;
+    font-size: 1.2rem;
+    margin-right: 1.5rem;
+    transition: color 0.2s ease;
+}
+
+.social-links-bottom a:hover {
+    color: #e10600;
+}
+
+.display-mode {
+    width: 150px;
+}
+
+.copyright-text-bottom {
+    font-size: 0.75rem;
+    color: #777;
+    margin-top: 2rem;
+}

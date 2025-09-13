@@ -1,0 +1,98 @@
+.race-ribbon {
+    background-color: #15151e; /* F1 Dark Background */
+    color: #ffffff;
+    height: 60px;
+    border-bottom: 1px solid #383838;
+    font-family: "F1 Regular", sans-serif;
+}
+
+/* Left Side Styling */
+.ribbon-left, .ribbon-right {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.race-details {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.race-round {
+    font-family: "F1 Bold", sans-serif;
+    font-size: 0.9rem;
+    line-height: 1;
+}
+
+.race-dates {
+    font-size: 0.8rem;
+    color: #a0a0a0;
+    line-height: 1;
+}
+
+.ribbon-separator {
+    width: 1px;
+    height: 40px;
+    background-color: #383838;
+}
+
+.race-location {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: "F1 Bold", sans-serif;
+    transition: color 0.2s ease;
+}
+
+.race-location:hover {
+    color: #e10600; /* F1 Red */
+}
+
+.race-flag {
+    font-size: 1.3rem;
+    padding-bottom: 5px;
+    display: flex;
+    vertical-align: center ;
+    justify-content: center;
+}
+
+.race-chevron {
+    color: #e10600; /* F1 Red */
+    font-size: 1.5rem;
+    margin-left: 0.5rem;
+}
+
+/* Right Side Styling */
+.ribbon-sponsor-logo {
+    object-fit: contain;
+}
+.tag-heuer {
+    height: 40px;
+}
+.pirelli {
+    height: 50px;
+}
+
+.race-times {
+    text-align: right;
+    font-size: 0.75rem;
+    color: #a0a0a0;
+    text-transform: uppercase;
+    line-height: 1.4;
+}
+
+.time-entry .dot {
+    color: #e10600;
+    margin-right: 0.3rem;
+}
+
+.time-value {
+    color: #ffffff;
+    font-family: "F1 Bold", sans-serif;
+    font-size: 0.9rem;
+    margin-left: 0.5rem;
+}
