@@ -1,8 +1,13 @@
 {
-  "name": "f1",
-  "private": true,
+  "name": "@vishwaraviraaj/f1",
   "version": "0.0.0",
   "type": "module",
+  "description": "F1 clone app",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vishwaraviraaj08/formula1-clone.git"
+  },
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
