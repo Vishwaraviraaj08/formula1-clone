@@ -79,3 +79,31 @@
 .stories-control.next {
     margin-left: 1rem;
 }
+
+@media (max-width: 1200px) {
+    .story-card-wrapper {
+        flex: 0 0 25%; /* 4 cards */
+    }
+}
+
+@media (max-width: 992px) {
+    .story-card-wrapper {
+        flex: 0 0 33.33%; /* 3 cards */
+    }
+}
+
+@media (max-width: 768px) {
+    .story-card-wrapper {
+        flex: 0 0 50%; /* 2 cards */
+    }
+
+    .stories-control {
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .story-card-wrapper {
+        flex: 0 0 100%; /* 1 card */
+    }
+}

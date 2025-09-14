@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import { Navbar, Nav, Container } from 'react-bootstrap';
 import logo from '../../assets/img/f1_logo.svg';
 import './HeaderPart2.css';
+import './HamburgerMenu.css';
 import {useNavigate} from "react-router-dom";
 
 
@@ -227,6 +228,7 @@ const FantasyAndGaming: React.FC = () => {
 const HeaderPart2: React.FC = () => {
     const [hovered, setHovered] = useState<string | null>(null);
     const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+    const [menuOpen, setMenuOpen] = useState(false);
 
     const handleMouseEnterLink = (key: string) => {
         if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
@@ -271,8 +273,10 @@ const HeaderPart2: React.FC = () => {
                     <Navbar.Brand href="/">
                         <img alt="F1 Logo" src={logo} width="150" className="d-inline-block align-top" />
                     </Navbar.Brand>
-                    <Navbar.Toggle aria-controls="sub-navbar-nav" />
-                    <Navbar.Collapse id="sub-navbar-nav">
+                    <div className="hamburger-menu" onClick={() => setMenuOpen(!menuOpen)}>
+                        <i className={menuOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
+                    </div>
+                    <Navbar.Collapse id="sub-navbar-nav" className={menuOpen ? 'show' : ''}>
                         <Nav className="m-auto gap-3 main-f1-nav">
                             {menuItems.map(item => (
                                 <Nav.Link

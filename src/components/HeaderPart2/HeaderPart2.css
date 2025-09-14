@@ -361,3 +361,345 @@
     color: #e10600 !important; /* F1 Red for hover */
 }
 
+@media (max-width: 768px) {
+    .sub-navbar .nav-link,
+    .sub-navbar .navbar-brand {
+        display: none;
+    }
+
+    .sub-navbar .hamburger-menu {
+        display: block;
+    }
+}
+
+
+/* Hover content styling */
+.hover-content {
+    width: 100%;
+    background-color: rgb(21, 21, 30);
+    color: white;
+    padding: 20px 0;
+    position: absolute;
+    left: 0;
+    top: 100px;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+
+.hover-links {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.hover-link {
+    color: white;
+    text-decoration: none;
+    font-family: "F1 Regular", sans-serif;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.hover-link:hover {
+    color: orange;
+}
+
+.results-menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 20px 30px;
+}
+
+.result-card {
+    background-color: #1a1f36;
+    border-radius: 1rem;
+    padding: 10px 20px;
+    width: auto;
+    text-align: center;
+    text-decoration: none;
+    color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.result-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.result-card h5 {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: "F1 Bold", sans-serif;
+}
+
+.result-card p {
+    font-size: 0.9rem;
+    color: #ccc;
+}
+
+.schedule-menu {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px 0;
+    flex-wrap: wrap;
+}
+
+.race-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem;
+    width: 320px;
+    height: 280px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.race-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.race-card:hover img {
+    transform: scale(1.1);
+}
+
+/* Overlay text at top-left */
+.race-overlay {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background: rgba(13, 20, 36, 0.6); /* semi-transparent dark */
+    padding: 8px 10px;
+    border-radius: 0.5rem;
+    color: white;
+    font-family: "F1 Bold", sans-serif;
+    text-align: left;
+}
+
+.race-overlay h5 {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.race-overlay p {
+    margin: 0;
+    font-size: 0.8rem;
+}
+
+.race-overlay span {
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+
+
+
+
+
+.drivers-menu {
+    padding: 2rem;
+}
+
+.all-drivers-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+}
+
+.buttonn {
+    font-size: 20px;
+    background: transparent;
+    border: none;
+    padding: 0.6em 1.5em;
+    color: #ffedd3;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.5s ease;
+    cursor: pointer;
+}
+
+.buttonn::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 0;
+    background-color: #d80d0d;
+    transition: 0.5s ease;
+}
+
+.buttonn:hover {
+    color: #1e1e2b;
+    transition-delay: 0.5s;
+}
+
+.buttonn:hover::before {
+    width: 100%;
+}
+
+.buttonn::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+    background-color: #d80d0d;
+    transition: 0.4s ease;
+    z-index: -1;
+}
+
+.buttonn:hover::after {
+    height: 100%;
+    transition-delay: 0.4s;
+    color: aliceblue;
+}
+
+
+
+.teams-menu {
+    padding: 1rem;
+}
+
+.all-teams-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.driver-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.team-card {
+    flex: 1 1 calc(25% - 1.5rem); /* ensures 4 items per row with gap accounted for */
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-3px);
+}
+
+.team-card a {
+    text-decoration: none;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    position: relative;
+}
+
+.team-name p {
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.team-logo {
+    width: 70%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 1rem; /* rounded-4 */
+    transition: box-shadow 0.4s ease, transform 0.3s ease;
+}
+
+.team-logo img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.team-logo::after,
+.team-logo::before {
+    content: "";
+    position: absolute;
+    background-color: #d80d0d;
+    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+}
+
+/* Bottom line */
+.team-logo::after {
+    left: 8px;        /* leave space to avoid corner */
+    right: 8px;       /* leave space to avoid corner */
+    bottom: 0;
+    height: 2px;
+    width: 0;
+}
+
+/* Right line */
+.team-logo::before {
+    top: 8px;         /* leave space to avoid corner */
+    bottom: 8px;      /* leave space to avoid corner */
+    right: 0;
+    width: 2px;
+    height: 0;
+}
+
+/* On hover, expand the lines */
+.team-card:hover .team-logo::after {
+    width: calc(100% - 16px); /* full width minus space on both sides */
+    opacity: 1;
+}
+
+.team-card:hover .team-logo::before {
+    height: calc(100% - 16px); /* full height minus space on top/bottom */
+    opacity: 1;
+}
+
+.border-team {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    z-index: 2;
+}
+
+.chevron {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}
+
+@media screen and (max-width: 1200px) {
+    .team-card {
+        flex: 1 1 calc(50% - 1rem);
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .team-card {
+        flex: 1 1 100%;
+    }
+}
+
+
+/* Target all links inside your custom navbar */
+.main-f1-nav .nav-link {
+    color: white !important; /* Use !important to override Bootstrap's default */
+    transition: color 0.2s ease-in-out;
+}
+
+/* Optional but recommended: Add a hover effect */
+.main-f1-nav .nav-link:hover {
+    color: #e10600 !important; /* F1 Red for hover */
+}
+

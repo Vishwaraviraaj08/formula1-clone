@@ -1,12 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Navbar, Nav, Container, Button } from 'react-bootstrap';
 import logo from '../../assets/img/fia_logo.png';
 import '/public/global.css'
 import './HeaderPart1.css'
 
 const HeaderPart1: React.FC = () => {
+    const [menuOpen, setMenuOpen] = useState(false);
+
     return (
-        <Navbar variant="dark" expand="lg" sticky="top" style={{backgroundColor: "rgb(21, 21, 30)"}}>
+        <Navbar variant="dark" expand="lg" sticky="top" style={{backgroundColor: "rgb(21, 21, 30)"}} onToggle={setMenuOpen} expanded={menuOpen}>
             <Container>
                 <Navbar.Brand href="/">
                     <div className="logo-white">

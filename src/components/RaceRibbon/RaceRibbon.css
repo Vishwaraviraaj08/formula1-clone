@@ -96,3 +96,19 @@
     font-size: 0.9rem;
     margin-left: 0.5rem;
 }
+
+@media (max-width: 768px) {
+    .race-details, .ribbon-separator, .ribbon-sponsor-logo, .race-times {
+        display: none;
+    }
+
+    .race-ribbon {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .ribbon-left {
+        justify-content: center;
+        width: 100%;
+    }
+}
